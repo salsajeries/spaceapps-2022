@@ -13,7 +13,12 @@ config_version=4
 config/name="spaceapps-2022"
 run/main_scene="res://master_scene.tscn"
 boot_splash/image="res://uahacmlogo.png"
-config/icon="res://icon.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [gui]
 
