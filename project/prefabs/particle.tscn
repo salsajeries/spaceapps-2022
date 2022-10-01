@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+params_blend_mode = 1
+albedo_color = Color( 1, 0.937255, 0, 1 )
+emission_enabled = true
+emission = Color( 1, 0.741176, 0, 1 )
+emission_energy = 1.05
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="RigidBody" type="RigidBody"]
+mass = 0.00102041
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="CSGSphere" type="CSGSphere" parent="CollisionShape"]
+radial_segments = 4
+rings = 4
+smooth_faces = false
+material = SubResource( 2 )
