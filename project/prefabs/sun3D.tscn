@@ -35,3 +35,9 @@ margin_bottom = 512.0
 stream = ExtResource( 2 )
 autoplay = true
 script = ExtResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+light_color = Color( 0.803922, 0.654902, 0.137255, 1 )
+light_energy = 2.0
+shadow_enabled = true

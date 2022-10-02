@@ -20,7 +20,7 @@ func _process(delta):
 	if x > interval:
 		var particle = flare.instance()
 		particle.linear_velocity = vecS
-		vecP = Vector3(rng.randfn(0,1),rng.randfn(0,1),0)
+		vecP = Vector3(rand_range(-1,1),rand_range(-1,1),0)
 		vecS = Vector3(0,0,rng.randfn(27.48713057981032, 27.3992185093072))
 		particle.translate(vecP)
 		add_child(particle)
