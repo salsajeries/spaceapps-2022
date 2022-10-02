@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/moose.ogg-a3ef391d24c21c9db07d22ea79126999.oggstr"
+
+[deps]
+
+source_file="res://audio/moose.ogg"
+dest_files=[ "res://.import/moose.ogg-a3ef391d24c21c9db07d22ea79126999.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
