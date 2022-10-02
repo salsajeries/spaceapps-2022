@@ -19,4 +19,4 @@ func _process(_delta):
 
 	number_label.text = str(player_current_health)
 	get_node("Bars/LifeBar/TextureProgress").value = player_current_health
-	get_node("../Score").text = str(player_current_score)
+	get_node("../Score").text = "Points: " + str(player_current_score)
