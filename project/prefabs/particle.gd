@@ -13,7 +13,7 @@ var total = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rng.set_seed(Time.get_unix_time_from_system())
+	rng.randomize()
 	var temperature = rng.randfn(33.57693815221815,14.7579782231735)
 	hue= temperature/70
 	norm_temperature = hue
