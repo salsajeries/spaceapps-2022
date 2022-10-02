@@ -28,7 +28,7 @@ func _on_Cup_body_entered(body):
 
 func _on_Body_body_entered(body):
 	if(body.is_in_group("Particle")):
-		Health -= 1
+		Health -= body.get("norm_temperature")*10
 		print(Health)
 		body.queue_free()
 
