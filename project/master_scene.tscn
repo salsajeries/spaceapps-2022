@@ -56,6 +56,7 @@ size_flags_vertical = 3
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 1680.0
 margin_bottom = 651.0
+rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -64,6 +65,7 @@ alignment = 1
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 235.0
 margin_bottom = 315.0
+focus_mode = 0
 button_mask = 7
 script = ExtResource( 6 )
 scene_path = "res://big_space.tscn"
@@ -71,4 +73,9 @@ scene_path = "res://big_space.tscn"
 [node name="AboutButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_top = 335.0
 margin_bottom = 415.0
+focus_mode = 0
+script = ExtResource( 6 )
+scene_path = "res://about.tscn"
+
 [connection signal="pressed" from="Menu/CenterRow/Buttons/StartGameButton" to="Menu/CenterRow/Buttons/StartGameButton" method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/AboutButton" to="Menu/CenterRow/Buttons/AboutButton" method="_on_AboutButton_pressed"]
