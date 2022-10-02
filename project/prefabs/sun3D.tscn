@@ -11,9 +11,11 @@ viewport_path = NodePath("sun/Viewport")
 [node name="Spatial" type="Spatial"]
 
 [node name="sun" type="Sprite3D" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
 texture = SubResource( 1 )
 script = ExtResource( 1 )
 flare = ExtResource( 3 )
+interval = 1
 
 [node name="Viewport" type="Viewport" parent="sun"]
 size = Vector2( 512, 512 )

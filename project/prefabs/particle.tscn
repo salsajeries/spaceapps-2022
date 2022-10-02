@@ -12,7 +12,9 @@ emission_operator = 0
 emission_on_uv2 = false
 
 [node name="RigidBody" type="RigidBody"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 mass = 0.00102041
+gravity_scale = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
