@@ -1,7 +1,6 @@
 extends MarginContainer
 
 onready var number_label = $Bars/LifeBar/Count/Background/Number
-onready var tween = $Tween
 
 var player_current_health = 100
 var player_current_score = 0
