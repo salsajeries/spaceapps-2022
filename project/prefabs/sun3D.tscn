@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://flare.gd" type="Script" id=1]
+[ext_resource path="res://2dassets/20221001193150_512_aia_0193.webm" type="VideoStream" id=2]
+[ext_resource path="res://prefabs/particle.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/videoLoop.gd" type="Script" id=4]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("sun/Viewport")
+
+[node name="Spatial" type="Spatial"]
+
+[node name="sun" type="Sprite3D" parent="."]
+texture = SubResource( 1 )
+script = ExtResource( 1 )
+flare = ExtResource( 3 )
+
+[node name="Viewport" type="Viewport" parent="sun"]
+size = Vector2( 512, 512 )
+render_target_v_flip = true
+
+[node name="VideoPlayer" type="VideoPlayer" parent="sun/Viewport"]
+margin_right = 512.0
+margin_bottom = 512.0
+stream = ExtResource( 2 )
+autoplay = true
+script = ExtResource( 4 )
