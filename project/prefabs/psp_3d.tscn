@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://3dassets/PSP.glb" type="PackedScene" id=1]
 [ext_resource path="res://scripts/psp_3d.gd" type="Script" id=2]
+[ext_resource path="res://space_camera.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 2.49885
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.798708, 0.839443, 0.0860625 )
 
 [node name="psp_3d" type="KinematicBody"]
 script = ExtResource( 2 )
@@ -12,6 +16,30 @@ script = ExtResource( 2 )
 [node name="PSP" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.3367, 0 )
+[node name="body_col" type="CollisionShape" parent="."]
+transform = Transform( 0.404828, 0, 0, 0, -1.45992e-07, -0.896088, 0, 0.3071, -5.00331e-08, 0, 0.200179, 0 )
 shape = SubResource( 1 )
+
+[node name="solars_col" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.000576973, 0 )
+shape = SubResource( 2 )
+
+[node name="sheild_col" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -1.41585, 0 )
+shape = SubResource( 2 )
+
+[node name="cup_col" type="CollisionShape" parent="."]
+transform = Transform( 0.585524, 0, 0, 0, -1.62921e-07, -1, 0, 0.509, -8.29268e-08, 0, -1.41585, 1.27839 )
+shape = SubResource( 2 )
+
+[node name="Camroot" type="Spatial" parent="."]
+script = ExtResource( 3 )
+
+[node name="h" type="Spatial" parent="Camroot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.40792, 0 )
+
+[node name="v" type="Spatial" parent="Camroot/h"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.59488, 0 )
+
+[node name="ClippedCamera" type="ClippedCamera" parent="Camroot/h/v"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01356, 8.5693 )

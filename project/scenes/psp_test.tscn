@@ -1,32 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://prefabs/psp_3d.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/reaction_wheel.tscn" type="PackedScene" id=2]
 
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0, 0, 1 )
+
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.787355, -0.283977, 0.547201, 0.0363682, 0.907443, 0.418599, -0.615426, -0.309686, 0.724807, 2.81709, 2.31259, 3.57742 )
+transform = Transform( 0.787355, -0.283977, 0.547201, 0.0363682, 0.907443, 0.418599, -0.615426, -0.309686, 0.724807, 5.43446, 3.69477, 6.39193 )
 
 [node name="KinematicBody" parent="." instance=ExtResource( 1 )]
+rotation_speed = 0.01
 
 [node name="wheel_A" parent="." instance=ExtResource( 2 )]
 position = Vector2( 900, 100 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_A_left"
 press_right = "wheel_A_right"
-rotation_start = 0.2
 
 [node name="wheel_B" parent="." instance=ExtResource( 2 )]
 position = Vector2( 500, 100 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_B_left"
 press_right = "wheel_B_right"
-rotation_start = 0.2
 
 [node name="wheel_C" parent="." instance=ExtResource( 2 )]
 position = Vector2( 100, 100 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_C_left"
 press_right = "wheel_C_right"
-rotation_start = 0.2
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 49.3086, -155.094, -1257.47, 242.457, 6677.14, -215.287, -55.3812, 175.468, 1504.17, -3.43059, 0, -5.3899 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
