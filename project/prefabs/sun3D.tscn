@@ -24,7 +24,7 @@ alpha_cut = 1
 texture = SubResource( 1 )
 script = ExtResource( 1 )
 flare = ExtResource( 3 )
-interval = 0.1
+interval = 0.01
 
 [node name="Viewport" type="Viewport" parent="sun"]
 size = Vector2( 512, 512 )
