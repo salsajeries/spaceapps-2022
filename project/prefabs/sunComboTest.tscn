@@ -1,33 +1,52 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://prefabs/sun3D.tscn" type="PackedScene" id=1]
+[ext_resource path="res://prefabs/reaction_wheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/psp_3d.tscn" type="PackedScene" id=2]
-[ext_resource path="res://prefabs/reaction_wheel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/sun3D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://2dassets/starmap_random_2020_16k.exr" type="Texture" id=4]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 4 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_custom_fov = 90.0
+background_energy = 5.11
+glow_enabled = true
+glow_intensity = 8.0
+adjustment_enabled = true
+adjustment_brightness = 0.54
 
 [node name="Spatial" type="Spatial"]
 
-[node name="sun" parent="." instance=ExtResource( 1 )]
-transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -69.1299 )
+[node name="sun" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -69.1299 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.99902, 0, 0.0442645, 0, 1, 0, -0.0442645, 0, 0.99902, 5.57981, 1.27906, 9.34909 )
+current = true
 
 [node name="psp_3d" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 
-[node name="wheel_A" parent="." instance=ExtResource( 3 )]
+[node name="wheel_A" parent="." instance=ExtResource( 1 )]
 position = Vector2( 429, 70 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_A_left"
 press_right = "wheel_A_right"
 
-[node name="wheel_B" parent="." instance=ExtResource( 3 )]
+[node name="wheel_B" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 69 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_B_left"
 press_right = "wheel_B_right"
 
-[node name="wheel_C" parent="." instance=ExtResource( 3 )]
+[node name="wheel_C" parent="." instance=ExtResource( 1 )]
 position = Vector2( 75, 64 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_C_left"
 press_right = "wheel_C_right"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
