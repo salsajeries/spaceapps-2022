@@ -11,14 +11,6 @@
 [ext_resource path="res://fonts/Raleway/static/Raleway-ExtraLightItalic.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Timer.gd" type="Script" id=11]
 
-[sub_resource type="PanoramaSky" id=1]
-panorama = ExtResource( 1 )
-
-[sub_resource type="Environment" id=2]
-background_mode = 2
-background_sky = SubResource( 1 )
-background_sky_custom_fov = 90.0
-
 [sub_resource type="DynamicFont" id=3]
 size = 33
 font_data = ExtResource( 8 )
@@ -27,13 +19,23 @@ font_data = ExtResource( 8 )
 size = 40
 font_data = ExtResource( 10 )
 
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_custom_fov = 90.0
+background_energy = 5.11
+glow_enabled = true
+glow_intensity = 8.0
+adjustment_enabled = true
+adjustment_brightness = 0.54
+
 [node name="Spatial" type="Spatial"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
-
 [node name="Sun" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.999997, -0.00253072, 0, 0.00253072, 0.999997, 0, 0, 0, 1, 0.046, 0.824, -240 )
+transform = Transform( 0.999997, -0.00253072, 0, 0.00253072, 0.999997, 0, 0, 0, 1, 0.046, 0.824, -162.332 )
 
 [node name="psp_3d" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.442381, -0.289403, -0.159168 )
@@ -99,3 +101,6 @@ custom_fonts/font = SubResource( 4 )
 align = 1
 valign = 1
 autowrap = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
