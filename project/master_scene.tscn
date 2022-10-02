@@ -50,7 +50,7 @@ margin_bottom = 920.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 1680.0
+margin_right = 400.0
 margin_bottom = 651.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -59,8 +59,10 @@ alignment = 1
 
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 235.0
+margin_right = 400.0
 margin_bottom = 315.0
 
 [node name="AboutButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_top = 335.0
+margin_right = 400.0
 margin_bottom = 415.0
