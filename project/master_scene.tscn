@@ -1,18 +1,39 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fonts/Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/source-code-pro/SourceCodePro.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/title_screen/buttons/AboutButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Adventures to the Sun-banner.png" type="Texture" id=2]
+[ext_resource path="res://scenes/title_screen/buttons/StartGameButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/model-spin.webm" type="VideoStream" id=4]
+
+[sub_resource type="ViewportTexture" id=1]
+viewport_path = NodePath("Sprite/Viewport")
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 1256, 668 )
+rotation = 1.5708
+texture = SubResource( 1 )
+
+[node name="Viewport" type="Viewport" parent="Sprite"]
+size = Vector2( 400, 800 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="Sprite/Viewport"]
+margin_right = 400.0
+margin_bottom = 800.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stream = ExtResource( 4 )
+autoplay = true
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 120.0
 margin_top = 80.0
 margin_right = 1800.0
 margin_bottom = 1000.0
-size_flags_vertical = 0
 
 [node name="Title" type="TextureRect" parent="Menu"]
 margin_right = 1680.0
@@ -27,18 +48,19 @@ margin_bottom = 920.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 1680.0
+margin_right = 840.0
 margin_bottom = 651.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
 
-[node name="StartGame" type="Button" parent="Menu/CenterRow/Buttons"]
-margin_right = 1680.0
-margin_bottom = 20.0
-flat = true
+[node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 235.0
+margin_right = 840.0
+margin_bottom = 315.0
 
-[node name="Label" type="Label" parent="Menu/CenterRow/Buttons/StartGame"]
-margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-text = "Start Game"
+[node name="AboutButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+margin_top = 335.0
+margin_right = 840.0
+margin_bottom = 415.0
