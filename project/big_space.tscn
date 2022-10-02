@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://2dassets/starmap_random_2020_4k_print.jpg" type="Texture" id=1]
+[ext_resource path="res://prefabs/psp_3d.tscn" type="PackedScene" id=2]
+[ext_resource path="res://prefabs/reaction_wheel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/sun3D.tscn" type="PackedScene" id=4]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_custom_fov = 90.0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Sun" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.999997, -0.00253072, 0, 0.00253072, 0.999997, 0, 0, 0, 1, 0.0461168, 0.823978, -13.4216 )
+
+[node name="psp_3d" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442381, -0.289403, -0.159168 )
+
+[node name="wheel_A" parent="." instance=ExtResource( 3 )]
+position = Vector2( 900, 100 )
+scale = Vector2( 0.1, 0.1 )
+press_left = "wheel_A_left"
+press_right = "wheel_A_right"
+
+[node name="wheel_B" parent="." instance=ExtResource( 3 )]
+position = Vector2( 500, 100 )
+scale = Vector2( 0.1, 0.1 )
+press_left = "wheel_B_left"
+press_right = "wheel_B_right"
+
+[node name="wheel_C" parent="." instance=ExtResource( 3 )]
+position = Vector2( 100, 100 )
+scale = Vector2( 0.1, 0.1 )
+press_left = "wheel_C_left"
+press_right = "wheel_C_right"

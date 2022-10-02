@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/title_screen/buttons/AboutButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Adventures to the Sun-banner.png" type="Texture" id=2]
 [ext_resource path="res://scenes/title_screen/buttons/StartGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/model-spin.webm" type="VideoStream" id=4]
 [ext_resource path="res://prefabs/videoLoop.gd" type="Script" id=5]
+[ext_resource path="res://scripts/button.gd" type="Script" id=6]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("Sprite/Viewport")
@@ -50,7 +51,7 @@ margin_bottom = 920.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 400.0
+margin_right = 1680.0
 margin_bottom = 651.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -59,10 +60,9 @@ alignment = 1
 
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 235.0
-margin_right = 400.0
 margin_bottom = 315.0
+script = ExtResource( 6 )
 
 [node name="AboutButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_top = 335.0
-margin_right = 400.0
 margin_bottom = 415.0
