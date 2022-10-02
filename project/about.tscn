@@ -77,3 +77,4 @@ script = ExtResource( 2 )
 scene_path = "res://master_scene.tscn"
 
 [connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="BackToTitle" to="BackToTitle" method="_on_BackToTitle_pressed"]
