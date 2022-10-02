@@ -76,6 +76,7 @@ scene_path = "res://about.tscn"
 
 [node name="Label" parent="Menu/CenterRow/Buttons/StartGameButton2" index="0"]
 text = "ABOUT"
+
 [connection signal="pressed" from="Menu/CenterRow/Buttons/StartGameButton" to="Menu/CenterRow/Buttons/StartGameButton" method="_on_StartGameButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/StartGameButton2" to="Menu/CenterRow/Buttons/StartGameButton2" method="_on_StartGameButton_pressed"]
 
