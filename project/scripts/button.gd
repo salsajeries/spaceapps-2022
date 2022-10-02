@@ -4,10 +4,10 @@ extends Button
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+export (String) var scene_path
 
-
-func _on_Button_pressed():
-	get_tree().change_scene("res://big_space.tscn")
+func _on_StartGameButton_pressed():
+	get_tree().change_scene(scene_path)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
