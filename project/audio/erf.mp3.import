@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/erf.mp3-29809a073e8c67b2a018c90aec0cf8c8.mp3str"
+
+[deps]
+
+source_file="res://audio/erf.mp3"
+dest_files=[ "res://.import/erf.mp3-29809a073e8c67b2a018c90aec0cf8c8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
