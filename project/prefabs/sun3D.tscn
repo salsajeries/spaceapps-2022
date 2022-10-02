@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://flare.gd" type="Script" id=1]
 [ext_resource path="res://2dassets/sunTransparentTest.webm" type="VideoStream" id=2]
-[ext_resource path="res://prefabs/particle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/videoLoop.gd" type="Script" id=4]
 
 [sub_resource type="ViewportTexture" id=1]
@@ -23,8 +22,6 @@ double_sided = false
 alpha_cut = 1
 texture = SubResource( 1 )
 script = ExtResource( 1 )
-flare = ExtResource( 3 )
-interval = 0.01
 
 [node name="Viewport" type="Viewport" parent="sun"]
 size = Vector2( 512, 512 )
