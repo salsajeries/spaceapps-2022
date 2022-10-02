@@ -1,6 +1,6 @@
 extends KinematicBody
-export (float) var Health
-var score = 0
+export (float) var Health = 100
+export (int) var score = 0
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

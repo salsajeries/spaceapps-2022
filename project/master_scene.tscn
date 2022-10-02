@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scenes/title_screen/buttons/AboutButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Adventures to the Sun-banner.png" type="Texture" id=2]
 [ext_resource path="res://scenes/title_screen/buttons/StartGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://textures/model-spin.webm" type="VideoStream" id=4]
@@ -56,7 +55,6 @@ size_flags_vertical = 3
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 1680.0
 margin_bottom = 651.0
-rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -65,17 +63,21 @@ alignment = 1
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 235.0
 margin_bottom = 315.0
-focus_mode = 0
 button_mask = 7
 script = ExtResource( 6 )
 scene_path = "res://big_space.tscn"
 
-[node name="AboutButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
+[node name="StartGameButton2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 335.0
 margin_bottom = 415.0
-focus_mode = 0
+button_mask = 7
 script = ExtResource( 6 )
 scene_path = "res://about.tscn"
 
+[node name="Label" parent="Menu/CenterRow/Buttons/StartGameButton2" index="0"]
+text = "ABOUT"
+
 [connection signal="pressed" from="Menu/CenterRow/Buttons/StartGameButton" to="Menu/CenterRow/Buttons/StartGameButton" method="_on_StartGameButton_pressed"]
-[connection signal="pressed" from="Menu/CenterRow/Buttons/AboutButton" to="Menu/CenterRow/Buttons/AboutButton" method="_on_AboutButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGameButton2" to="Menu/CenterRow/Buttons/StartGameButton2" method="_on_StartGameButton_pressed"]
+
+[editable path="Menu/CenterRow/Buttons/StartGameButton2"]
