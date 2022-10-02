@@ -35,6 +35,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39663, 0.269879 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.6927, -0.267181 )
 current = true
 fov = 90.0
+far = 8192.0
 
 [node name="Shield" type="Area" parent="."]
 

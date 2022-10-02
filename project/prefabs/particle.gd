@@ -2,7 +2,7 @@ extends RigidBody
 signal hit
 
 # Declare member variables here. Examples:
-# var a = 2
+var a = 0
 # var b = "text"
 
 
@@ -12,5 +12,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	a += delta
+	if a > 20:
+		self.queue_free()

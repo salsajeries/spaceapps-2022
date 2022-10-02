@@ -1,27 +1,38 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://flare.gd" type="Script" id=1]
-[ext_resource path="res://2dassets/20221001193150_512_aia_0193.webm" type="VideoStream" id=2]
+[ext_resource path="res://2dassets/sunTransparentTest.webm" type="VideoStream" id=2]
 [ext_resource path="res://prefabs/particle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://prefabs/videoLoop.gd" type="Script" id=4]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("sun/Viewport")
 
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 4
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
 [node name="Spatial" type="Spatial"]
 
 [node name="sun" type="Sprite3D" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
+double_sided = false
+alpha_cut = 1
 texture = SubResource( 1 )
 script = ExtResource( 1 )
 flare = ExtResource( 3 )
-interval = 1
+interval = 0.1
 
 [node name="Viewport" type="Viewport" parent="sun"]
 size = Vector2( 512, 512 )
+transparent_bg = true
 render_target_v_flip = true
 
 [node name="VideoPlayer" type="VideoPlayer" parent="sun/Viewport"]
+material = SubResource( 2 )
 margin_right = 512.0
 margin_bottom = 512.0
 stream = ExtResource( 2 )

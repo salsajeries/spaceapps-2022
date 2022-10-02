@@ -7,12 +7,11 @@ extends KinematicBody2D
 export (String) var press_left = "null"
 export (String) var press_right = "null"
 export (int) var rotation_dir = 0 
-export (float) var rotation_speed = 0.005
-export (float) var rotation_start = .2
+export (float) var rotation_speed = 0.05
+export (float) var rotation_start = .3
 export (float) var friction_weight = 0
 export (float) var rotation_offset = 0
 # Called when the node enters the scene tree for the first time.
-
 func _physics_process(delta):
 	rotation_offset = (rotation_dir * rotation_speed * delta)
 	rotation += (rotation_offset + rotation_start)

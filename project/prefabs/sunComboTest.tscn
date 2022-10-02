@@ -3,7 +3,7 @@
 [ext_resource path="res://prefabs/reaction_wheel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://prefabs/psp_3d.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/sun3D.tscn" type="PackedScene" id=3]
-[ext_resource path="res://2dassets/starmap_random_2020_16k.exr" type="Texture" id=4]
+[ext_resource path="res://2dassets/starmap_random_2020_4k.exr" type="Texture" id=4]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 4 )
@@ -21,7 +21,7 @@ adjustment_brightness = 0.54
 [node name="Spatial" type="Spatial"]
 
 [node name="sun" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -69.1299 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -231.24 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.99902, 0, 0.0442645, 0, 1, 0, -0.0442645, 0, 0.99902, 5.57981, 1.27906, 9.34909 )
