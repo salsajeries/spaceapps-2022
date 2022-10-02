@@ -25,19 +25,24 @@ transform = Transform( 0.999997, -0.00253072, 0, 0.00253072, 0.999997, 0, 0, 0, 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442381, -0.289403, -0.159168 )
 
 [node name="wheel_A" parent="." instance=ExtResource( 3 )]
-position = Vector2( 900, 100 )
+position = Vector2( 324, 993 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_A_left"
 press_right = "wheel_A_right"
 
 [node name="wheel_B" parent="." instance=ExtResource( 3 )]
-position = Vector2( 500, 100 )
+position = Vector2( 203, 997 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_B_left"
 press_right = "wheel_B_right"
 
 [node name="wheel_C" parent="." instance=ExtResource( 3 )]
-position = Vector2( 100, 100 )
+position = Vector2( 80, 996 )
 scale = Vector2( 0.1, 0.1 )
 press_left = "wheel_C_left"
 press_right = "wheel_C_right"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 400.0
+margin_right = 1520.0
+margin_bottom = 40.0
