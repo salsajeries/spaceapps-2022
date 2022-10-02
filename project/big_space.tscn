@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://2dassets/starmap_random_2020_4k_print.jpg" type="Texture" id=1]
 [ext_resource path="res://prefabs/psp_3d.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes/Bar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=6]
 [ext_resource path="res://prefabs/music_controller.tscn" type="PackedScene" id=7]
-[ext_resource path="res://fonts/Raleway/static/Raleway-Italic.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="PanoramaSky" id=1]
 panorama = ExtResource( 1 )
@@ -17,20 +16,16 @@ background_mode = 2
 background_sky = SubResource( 1 )
 background_sky_custom_fov = 90.0
 
-[sub_resource type="DynamicFont" id=3]
-size = 25
-font_data = ExtResource( 8 )
-
 [node name="Spatial" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
 [node name="Sun" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.999997, -0.00253072, 0, 0.00253072, 0.999997, 0, 0, 0, 1, 0.0461168, 0.823978, -13.4216 )
+transform = Transform( 0.999997, -0.00253072, 0, 0.00253072, 0.999997, 0, 0, 0, 1, 0.046, 0.824, -240 )
 
 [node name="psp_3d" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.442381, -0.289403, -0.159168 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, -0.442381, -0.289403, -0.159168 )
 
 [node name="wheel_A" parent="." instance=ExtResource( 3 )]
 position = Vector2( 300, 1005 )
@@ -53,30 +48,23 @@ press_right = "wheel_C_right"
 [node name="Tween" type="Tween" parent="."]
 
 [node name="GUI" type="MarginContainer" parent="."]
-margin_right = 537.0
-margin_bottom = 87.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
 script = ExtResource( 6 )
 
 [node name="Bars" type="VBoxContainer" parent="GUI"]
-margin_right = 537.0
-margin_bottom = 87.0
+margin_right = 400.0
+margin_bottom = 53.0
 
 [node name="LifeBar" parent="GUI/Bars" instance=ExtResource( 5 )]
-margin_right = 537.0
+margin_right = 400.0
 margin_bottom = 53.0
 
 [node name="EnergyBar" parent="GUI/Bars" instance=ExtResource( 5 )]
 visible = false
 margin_top = 57.0
-margin_right = 500.0
+margin_right = 1120.0
 margin_bottom = 110.0
-
-[node name="Score" type="TextEdit" parent="."]
-margin_left = 510.0
-margin_top = 8.0
-margin_right = 610.0
-margin_bottom = 58.0
-rect_min_size = Vector2( 50, 50 )
-custom_fonts/font = SubResource( 3 )
 
 [node name="music_dir_shuffle" parent="." instance=ExtResource( 7 )]
