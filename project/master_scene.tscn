@@ -13,6 +13,9 @@ viewport_path = NodePath("Sprite/Viewport")
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 show_behind_parent = true
@@ -61,8 +64,11 @@ alignment = 1
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 235.0
 margin_bottom = 315.0
+button_mask = 7
 script = ExtResource( 6 )
+scene_path = "res://big_space.tscn"
 
 [node name="AboutButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_top = 335.0
 margin_bottom = 415.0
+[connection signal="pressed" from="Menu/CenterRow/Buttons/StartGameButton" to="Menu/CenterRow/Buttons/StartGameButton" method="_on_StartGameButton_pressed"]
